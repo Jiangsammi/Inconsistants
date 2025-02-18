@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inconsistent Love</title>
+    <link href="https://fonts.googleapis.com/css2?family=Miss+Fajardose&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="inconsistant.css">
+
+</head>
+<body>
+    <a href="Love-Letter.html" class="playlist-btn">
+        <div class="playlist-tab">
+            Write a Letter
+        </div>
+    </a>
+
+    <!-- More tab for opening the comment section -->
+    <div class="more-tab">More</div>
+
+    <!-- Comment Section (initially hidden off-screen to the left) -->
+    <div class="comment-section">
+        <!-- Back button to close the comment section -->
+        <button class="back-button">Back</button>
+
+        <h2>Leave a Comment</h2>
+        <textarea placeholder="Write your comment here..."></textarea>
+        <button>Submit</button>
+
+        <!-- Recent comments will be displayed here -->
+        <div class="recent-comments" id="recent-comments"></div>
+    </div>
+
+    <div class="grid-container"></div>
+
+    <!-- First "Love" with typing effect -->
+    <div class="love-text">
+        <span class="typing-effect">Love</span>
+    </div>
+
+    <!-- Second "Love" positioned at the bottom-right corner -->
+    <div class="love-text-bottom-right">
+        <span class="typing-effect">Love</span>
+    </div>
+
+    <script>
+        // Function to toggle the open class for the comment section
+        const moreButton = document.querySelector('.more-tab');
+        const commentSection = document.querySelector('.comment-section');
+        const backButton = document.querySelector('.back-button');
+
+        // Toggle comment section visibility on "More" button click
+        moreButton.addEventListener('click', () => {
+            commentSection.classList.toggle('open'); // Toggle the 'open' class
+        });
+
+        // Close comment section when "Back" button is clicked
+        backButton.addEventListener('click', () => {
+            commentSection.classList.remove('open'); // Remove 'open' class to slide it back out
+        });
+
+        // Zoom effect toggle
+        const loveText = document.querySelector('.love-text');
+        const loveTextBottomRight = document.querySelector('.love-text-bottom-right');
+
+        // URL to navigate to
+        const redirectUrl = 'letter1.html'; // Change this to the page you want to go to
+
+        // Function to toggle zoom effect
+        function toggleZoomEffect() {
+            loveText.classList.toggle('zoomed');
+            loveTextBottomRight.classList.toggle('zoomed');
+        }
+
+        // Handle redirection when zoomed-in "Love" is clicked
+        function handleClickRedirect(event) {
+            if (loveText.classList.contains('zoomed') || loveTextBottomRight.classList.contains('zoomed')) {
+                window.location.href = redirectUrl; // Redirect to the page
+            }
+        }
+
+        // Add click event listeners for zooming and redirection
+        loveText.addEventListener('click', () => {
+            toggleZoomEffect();
+            handleClickRedirect();
+        });
+
+        loveTextBottomRight.addEventListener('click', () => {
+            toggleZoomEffect();
+            handleClickRedirect();
+        });
+    </script>
+</body>
+</html>

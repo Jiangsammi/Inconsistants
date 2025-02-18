@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Letter</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Miss+Fajardose&display=swap" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: #f8f8f8;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+            text-align: center;
+            overflow-y: auto;
+            height: 90vh;
+        }
+
+        h2 {
+            font-family: 'Miss Fajardose', cursive;
+            color: #e85a8e;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            position: sticky;
+            top: 0;
+            background-color: white;
+            padding: 10px;
+            z-index: 10;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        input[type="text"], textarea {
+            padding: 15px;
+            font-size: 1rem;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            background-color: #f9f9f9;
+            transition: border 0.3s ease;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        input[type="text"]:focus, textarea:focus {
+            border: 1px solid #e85a8e;
+            outline: none;
+        }
+
+        button {
+            padding: 12px 0;
+            font-size: 1.1rem;
+            border-radius: 8px;
+            background-color: transparent;
+            color: #333;
+            border: none;
+            cursor: pointer;
+            position: relative;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        button:hover {
+            color: #e85a8e; /* Change the color of the text */
+            transform: scale(1.2); /* Grow the text when hovered */
+        }
+
+        .saved-letters {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            text-align: left;
+        }
+
+        .saved-letter {
+            background-color: #fff2f3;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .saved-letter p {
+            font-size: 1rem;
+            color: #333;
+            line-height: 1.5;
+        }
+
+        .saved-letter .timestamp {
+            font-size: 0.9rem;
+            color: #888;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Back button to go to the second page -->
+    <button class="back-button" onclick="window.location.href = 'inconsistant.html';">Back</button>
+
+    <h2>Write Your Love Letter</h2>
+    <form id="love-letter-form">
+        <!-- Dear Section -->
+        <input type="text" id="dear" name="dear" placeholder="Dear [name]..." required>
+
+        <!-- Letter Content Section -->
+        <textarea id="loveLetter" name="loveLetter" placeholder="Write your sweetest message here..." required></textarea>
+
+        <!-- From Section -->
+        <input type="text" id="from" name="from" placeholder="From [name]..." required>
+
+        <button type="submit">Save Letter</button>
+    </form>
+
+    <div class="saved-letters" id="saved-letters"></div>
+</div>
+
+<script>
+    // Function to save the love letter with date and time
+    function saveLoveLetter(dearText, letterText, fromText) {
+        const currentDate = new Date();
+        const dateString = currentDate.toLocaleDateString();
+        const timeString = currentDate.toLocaleTimeString();
+
+        // Combine all parts of the letter
+        const fullLetter = `Dear ${dearText},\n\n${letterText}\n\nFrom, ${fromText}`;
+
+        // Create a new letter object with all details
+        const newLetter = {
+            letter: fullLetter,
+            date: dateString,
+            time: timeString
+        };
+
+        // Get existing letters from localStorage
+        let letters = JSON.parse(localStorage.getItem('loveLetters')) || [];
+
+        // Add the new letter to the array
+        letters.push(newLetter);
+
+        // Save the updated letters array back to localStorage
+        localStorage.setItem('loveLetters', JSON.stringify(letters));
+    }
+
+    // Function to display all saved letters with date and time
+    function displaySavedLetters() {
+        const savedLetters = JSON.parse(localStorage.getItem('loveLetters')) || [];
+        const lettersContainer = document.getElementById('saved-letters');
+
+        // Clear previous letters before adding new ones
+        lettersContainer.innerHTML = '';
+
+        // Loop through all saved letters and create a div for each one
+        savedLetters.forEach(letter => {
+            const letterDiv = document.createElement('div');
+            letterDiv.classList.add('saved-letter');
+
+            letterDiv.innerHTML = `
+                <p>${letter.letter}</p>
+                <p class="timestamp">Submitted on: ${letter.date} at ${letter.time}</p>
+            `;
+
+            lettersContainer.appendChild(letterDiv);
+        });
+    }
+
+    // Event listener for form submission
+    document.getElementById('love-letter-form').addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        const dearText = document.getElementById('dear').value;
+        const letterText = document.getElementById('loveLetter').value;
+        const fromText = document.getElementById('from').value;
+
+        // Save the letter to localStorage
+        saveLoveLetter(dearText, letterText, fromText);
+
+        // Display the updated list of saved letters
+        displaySavedLetters();
+
+        // Clear the form after submission
+        document.getElementById('love-letter-form').reset();
+    });
+
+    // Display saved letters when the page loads
+    document.addEventListener('DOMContentLoaded', displaySavedLetters);
+</script>
+
+</body>
+</html>

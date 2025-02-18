@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heartbroken Letter</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            background-color: #281919; /* Dark, depressed red */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Align to the top of the page */
+            height: 100vh;
+            padding-top: 30px; /* Add some space at the top */
+        }
+
+        .letter-container {
+            width: 80%;
+            max-width: 700px;
+            background-color: #3d0a0a; /* Very dark red background for letter */
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            overflow-y: auto;
+        }
+
+        .letter {
+            font-size: 20px;
+            line-height: 1.8;
+            color: #f5d0c5; /* Light beige-pink text color to contrast the dark background */
+            text-align: left;
+            padding-left: 20px;
+        }
+
+        .letter span {
+            display: block;
+            opacity: 0;
+            color: #f5d0c5; /* Light beige-pink color */
+            animation: fallIn 2s forwards, fadeOut 2s forwards;
+            font-family: 'Georgia', serif;
+        }
+
+        /* Word animation delay */
+        .letter span:nth-child(1) { animation-delay: 0s, 10s; }
+        .letter span:nth-child(2) { animation-delay: 0.3s, 10s; }
+        .letter span:nth-child(3) { animation-delay: 0.6s, 10s; }
+        .letter span:nth-child(4) { animation-delay: 0.9s, 10s; }
+        .letter span:nth-child(5) { animation-delay: 1.2s, 10s; }
+        .letter span:nth-child(6) { animation-delay: 1.5s, 10s; }
+        .letter span:nth-child(7) { animation-delay: 1.8s, 10s; }
+        .letter span:nth-child(8) { animation-delay: 2.1s, 10s; }
+        .letter span:nth-child(9) { animation-delay: 2.4s, 10s; }
+        .letter span:nth-child(10) { animation-delay: 2.7s, 10s; }
+        .letter span:nth-child(11) { animation-delay: 3s, 10s; }
+        .letter span:nth-child(12) { animation-delay: 3.3s, 10s; }
+        .letter span:nth-child(13) { animation-delay: 3.6s, 10s; }
+        .letter span:nth-child(14) { animation-delay: 3.9s, 10s; }
+        .letter span:nth-child(15) { animation-delay: 4.2s, 10s; }
+        .letter span:nth-child(16) { animation-delay: 4.5s, 10s; }
+
+        /* The new part */
+        .letter span:nth-child(17) { animation-delay: 4.8s, 10s; }
+        .letter span:nth-child(18) { animation-delay: 5.1s, 10s; }
+        .letter span:nth-child(19) { animation-delay: 5.4s, 10s; }
+        .letter span:nth-child(20) { animation-delay: 5.7s, 10s; }
+        .letter span:nth-child(21) { animation-delay: 6s, 10s; }
+        .letter span:nth-child(22) { animation-delay: 6.3s, 10s; }
+
+        /* Falling down animation */
+        @keyframes fallIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Fade out after all words appear */
+        @keyframes fadeOut {
+            0% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+
+        .signature {
+            margin-top: 30px;
+            font-size: 18px;
+            color: #f5d0c5; /* Same light color as the letter text */
+            font-style: italic;
+            text-align: right;
+        }
+
+        /* Home Button */
+        .home-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background-color: #f5d0c5; /* Light beige-pink for contrast */
+            color: #7f1c1c; /* Dark red text color */
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-family: 'Georgia', serif;
+            font-size: 16px;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease;
+        }
+
+        .home-button:hover {
+            background-color: #e197b1; /* Slightly darker pink */
+        }
+    </style>
+</head>
+<body>
+    <a href="home4.html" class="home-button">Home</a> <!-- Updated Home link -->
+    <div class="letter-container">
+        <div class="letter">
+            <span>Dear</span>
+            <span>Kai,</span>
+            <br><br>
+            <span>I don't understand what's happening.</span>
+            <span>You used to respond so quickly,</span>
+            <span>but now, it's like I'm invisible.</span>
+            <span>I send messages,</span>
+            <span>but you never reply.</span>
+            <span>And I keep wondering...</span>
+            <span>Why aren't you texting back?</span>
+            <span>Did I do something wrong?</span>
+            <span>Did I say something that pushed you away?</span>
+            <span>I can't help but feel like</span>
+            <span>maybe you've lost interest in me.</span>
+            <span>I don't know if it's something I did,</span>
+            <span>or if this is just how things are meant to end.</span>
+            <span>But I'm scared of losing you.</span>
+            <span>It's painful to feel ignored.</span>
+            <span>And I don't know what to do...</span>
+            <br><br>
+            <div class="footer">
+                <p>7 - 20 - 2024</p>
+                <div>Your once beloved,</div>
+                <p>Sammi</p>
+            </div>        </div>
+    </div>
+</body>
+</html>

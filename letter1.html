@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>A Love Letter</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            background-color: #ffe6f7;
+            color: #f782d6;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Adjusted this to align the content starting from the top */
+            overflow: auto; /* Allows scrolling if content exceeds the screen */
+        }
+        .container {
+            background-color: white;
+            width: 60%;
+            padding: 30px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            max-width: 800px;
+            border: 2px solid #ff66b2;
+            position: relative;
+            margin-top: 40px; /* Adds space above the container */
+        }
+
+        .header {
+            text-align: center;
+            font-size: 32px;
+            color: #ff66b2;
+            font-family: 'Dancing Script', cursive;
+            margin-bottom: 20px;
+            margin-top: 40px; /* Adds space before the header */
+        }
+
+        .letter {
+            font-size: 18px;
+            line-height: 1.8;
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #fff0f7;
+            border-left: 6px solid #ff66b2;
+            border-radius: 8px;
+            font-family: 'Georgia', serif;
+            position: relative;
+            display: inline-block;
+            word-wrap: break-word;
+        }
+        .footer {
+            text-align: right;
+            margin-top: 30px;
+            margin-bottom: 30px; /* Adds space below the date */
+            font-style: italic;
+            color: #ff66b2;
+            font-size: 16px;
+        }
+
+        /* Bouncing animation keyframes */
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            25% {
+                transform: translateY(-10px);
+            }
+            50% {
+                transform: translateY(10px);
+            }
+            75% {
+                transform: translateY(-5px);
+            }
+        }
+
+        /* Apply animation to each word */
+        .word {
+            display: inline-block;
+            animation: bounce 1.5s ease-in-out infinite;
+            animation-delay: calc(0.1s * var(--i)); /* Delay based on the index of each word */
+        }
+
+        p {
+            margin: 10px 0;
+        }
+
+        /* Home Button Styles */
+        .home-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: #ff66b2;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: 'Arial', sans-serif;
+            transition: background-color 0.3s ease;
+        }
+
+        .home-button:hover {
+            background-color: #f782d6;
+        }
+
+    </style>
+</head>
+<body>
+    <button class="home-button" onclick="window.location.href='home2.html';">Home</button> <!-- Home button -->
+    <div class="container">
+        <div class="header">
+            My first Crush
+        </div>
+        
+        <div class="letter">
+            <p>
+                <span class="word" style="--i:1;">My</span>
+                <span class="word" style="--i:2;">Dearest</span>
+                <span class="word" style="--i:3;">Kai,</span>
+            </p>
+            <p>
+                <span class="word" style="--i:4;">From</span>
+                <span class="word" style="--i:5;">the</span>
+                <span class="word" style="--i:6;">moment</span>
+                <span class="word" style="--i:7;">we</span>
+                <span class="word" style="--i:8;">met,</span>
+                <span class="word" style="--i:9;">I</span>
+                <span class="word" style="--i:10;">knew</span>
+                <span class="word" style="--i:11;">there</span>
+                <span class="word" style="--i:12;">was</span>
+                <span class="word" style="--i:13;">something</span>
+                <span class="word" style="--i:14;">between</span>
+                <span class="word" style="--i:15;">us.</span>
+                <span class="word" style="--i:16;">I</span>
+                <span class="word" style="--i:17;">never</span>
+                <span class="word" style="--i:18;">thought would</span>
+                <span class="word" style="--i:19;">be possible.</span>
+            </p>
+            <p>
+                <span class="word" style="--i:20;">It’s</span>
+                <span class="word" style="--i:21;">a</span>
+                <span class="word" style="--i:22;">feeling</span>
+                <span class="word" style="--i:23;">that</span>
+                <span class="word" style="--i:24;">has</span>
+                <span class="word" style="--i:25;">only</span>
+                <span class="word" style="--i:26;">grown</span>
+                <span class="word" style="--i:27;">stronger</span>
+                <span class="word" style="--i:28;">when</span>
+                <span class="word" style="--i:29;">I get</span>
+                <span class="word" style="--i:30;">to see</span>
+                <span class="word" style="--i:31;">you,</span>
+                <span class="word" style="--i:32;">There</span>
+                <span class="word" style="--i:33;">was</span>
+                <span class="word" style="--i:34;">something</span>
+                <span class="word" style="--i:35;">I couldn't</span>
+                <span class="word" style="--i:36;">explain</span>
+                <span class="word" style="--i:37;">but</span>
+                <span class="word" style="--i:38;">I feel</span>
+                <span class="word" style="--i:39;">connected</span>
+                <span class="word" style="--i:40;">to you</span>
+                <span class="word" style="--i:41;">from</span>
+                <span class="word" style="--i:42;">the start.</span>
+            </p>
+            <p>
+                <span class="word" style="--i:43;">I</span>
+                <span class="word" style="--i:44;">don't</span>
+                <span class="word" style="--i:45;">know if</span>
+                <span class="word" style="--i:46;">your</span>
+                <span class="word" style="--i:47;">feeling</span>
+                <span class="word" style="--i:48;">the same</span>
+                <span class="word" style="--i:49;">but I</span>
+                <span class="word" style="--i:50;">wish</span>
+                <span class="word" style="--i:51;">you</span>
+                <span class="word" style="--i:52;">can see</span>
+                <span class="word" style="--i:53;">my</span>
+                <span class="word" style="--i:54;">affection</span>
+                <span class="word" style="--i:55;">toward</span>
+                <span class="word" style="--i:56;">you.</span>
+                <span class="word" style="--i:57;">I</span>
+                <span class="word" style="--i:58;">never</span>
+                <span class="word" style="--i:59;">seen</span>
+                <span class="word" style="--i:60;">and feel</span>
+                <span class="word" style="--i:61;">this this</span>
+            </p>
+            <p>
+                <span class="word" style="--i:62;">toward</span>
+                <span class="word" style="--i:63;">anyone</span>
+                <span class="word" style="--i:64;">else</span>
+                <span class="word" style="--i:65;">before.</span>
+                <span class="word" style="--i:66;">You</span>
+                <span class="word" style="--i:67;">really</span>
+                <span class="word" style="--i:68;">caught</span>
+                <span class="word" style="--i:69;">my</span>
+                <span class="word" style="--i:70;">attention.</span>
+                <span class="word" style="--i:71;">I think</span>
+                <span class="word" style="--i:72;">I</span>
+                <span class="word" style="--i:73;">have</span>
+                <span class="word" style="--i:74;">a</span>
+                <span class="word" style="--i:75;">crush</span>
+                <span class="word" style="--i:76;">on</span>
+                <span class="word" style="--i:77;">you!</span>
+            </p>
+            <p>
+                <span class="word" style="--i:83;">I</span>
+                <span class="word" style="--i:84;">am</span>
+                <span class="word" style="--i:85;">forever</span>
+                <span class="word" style="--i:86;">enchanted</span>
+                <span class="word" style="--i:87;">by</span>
+                <span class="word" style="--i:88;">your</span>
+                <span class="word" style="--i:89;">presence,</span>
+                <span class="word" style="--i:90;">and</span>
+                <span class="word" style="--i:91;">I</span>
+                <span class="word" style="--i:92;">can’t</span>
+                <span class="word" style="--i:93;">help</span>
+                <span class="word" style="--i:94;">but</span>
+                <span class="word" style="--i:95;">dream</span>
+                <span class="word" style="--i:96;">of</span>
+                <span class="word" style="--i:97;">every</span>
+                <span class="word" style="--i:98;">little</span>
+                <span class="word" style="--i:99;">detail</span>
+                <span class="word" style="--i:100;">when</span>
+                <span class="word" style="--i:101;">we</span>
+                <span class="word" style="--i:102;">spend,</span>
+                <span class="word" style="--i:103;">time</span>
+                <span class="word" style="--i:104;">together!</span>
+            </p>
+        </div>
+        <div class="footer">
+            *A letter I wrote for myself.* 
+            <p>01/24/2023</p>
+        </div>
+    </div>
+</body>
+</html>

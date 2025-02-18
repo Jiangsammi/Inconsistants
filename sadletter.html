@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Sad Love Letter</title>
+    <style>
+        /* Import Google Font */
+        @import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+
+        body {
+            font-family: 'Caveat', cursive, sans-serif; /* Use Caveat font */
+            background-color: #2e2e2e;
+            color: #ddd;
+            margin: 0;
+            height: 100vh; /* Set body height to 100vh to take up the entire viewport */
+            display: flex;
+            justify-content: center;
+            align-items: center; /* Center the content vertically and horizontally */
+            padding: 20px; /* Adds a little space around the edges */
+            overflow: hidden; /* Prevents overflow of text during animation */
+        }
+
+        .letter {
+            background-color: #3a3a3a;
+            border-radius: 12px;
+            padding: 40px;
+            max-width: 600px;
+            width: 100%; /* Ensures letter takes up full width, but doesn't go beyond 600px */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            animation: slideIn 2s ease-in-out;
+            overflow-y: auto; /* Allows the content to scroll if it's too long */
+            max-height: 80vh; /* Limits the height to 80% of the viewport height */
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: #aaa;
+            animation: fadeInText 5s ease-out;
+        }
+
+        p {
+            line-height: 1.8;
+            font-size: 18px;
+            color: #ccc;
+            opacity: 0;
+            animation: fadeInText 5s ease-out forwards;
+            position: relative;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 16px;
+            color: #bbb;
+        }
+
+        /* Home button style */
+        .home-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: #444;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 18px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s ease;
+        }
+
+        .home-btn:hover {
+            background-color: #666;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            0% {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInText {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* Floating animation */
+        @keyframes floatWords {
+            0% {
+                transform: translateY(0) translateX(0);
+                opacity: 0;
+            }
+            50% {
+                transform: translateY(-20px) translateX(10px);
+                opacity: 0.7;
+            }
+            100% {
+                transform: translateY(20px) translateX(-10px);
+                opacity: 1;
+            }
+        }
+
+        p span {
+            display: inline-block;
+            opacity: 0;
+            animation: floatWords 6s ease-in-out infinite;
+        }
+
+        p span:nth-child(odd) {
+            animation-delay: 0.5s;
+        }
+
+        p span:nth-child(even) {
+            animation-delay: 1s;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Home button linking to the home page -->
+    <a href="home3.html" class="home-btn">Home</a>
+
+    <div class="letter">
+        <h2>Hey Kai,</h2>
+        <p>
+            <span>I</span> <span>know</span> <span>you</span> <span>had</span> <span>been</span> <span>pretty</span> <span>busy</span> <span>lately</span> <span>you</span> <span>don't</span> <span>seem</span> <span>like</span> <span>you</span> <span>have</span> <span>time</span> <span>for</span> <span>me.</span> <span>We</span> <span>barely</span> <span>see</span> <span>eachother.</span> <span>It</span> <span>seems</span> <span>like</span> <span>your</span> <span>still</span> <span>mad</span> <span>aout</span> <span>our</span> <span>disagreements</span> <span>before,</span> <span>but</span> <span>this...</span> <span>this</span> <span>feels</span> <span>different.</span>
+        </p>
+        <p>
+            <span>It</span> <span>hurts</span> <span>to</span> <span>admit,</span> <span>but</span> <span>I</span> <span>feel</span> <span>like</span> <span>we’re</span> <span>seeing</span> <span>things</span> <span>through</span> <span>different</span> <span>perspective</span> <span>now,</span> <span>and</span> <span>that</span> <span>scares</span> <span>me.</span> <span>I’ve</span> <span>tried</span> <span>so</span> <span>hard</span> <span>to</span> <span>understand</span> <span>your</span> <span>perspective,</span> <span>to</span> <span>meet</span> <span>you</span> <span>halfway,</span> <span>but</span> <span>it</span> <span>seems</span> <span>like</span> <span>no</span> <span>matter</span> <span>how</span> <span>much</span> <span>I</span> <span>try,</span> <span>we</span> <span>just</span> <span>can’t</span> <span>find</span> <span>a</span> <span>common</span> <span>ground.</span> <span>We’ve</span> <span>been</span> <span>arguing</span> <span>more,</span> <span>and</span> <span>the</span> <span>distance</span> <span>between</span> <span>us</span> <span>is</span> <span>growing</span> <span>wider</span> <span>with</span> <span>every</span> <span>passing</span> <span>day.</span>
+        </p>
+        <p>
+            <span>I’ve</span> <span>been</span> <span>holding</span> <span>on,</span> <span>hoping</span> <span>that</span> <span>this</span> <span>is</span> <span>just</span> <span>a</span> <span>phase,</span> <span>that</span> <span>the</span> <span>love</span> <span>we’ve</span> <span>built</span> <span>will</span> <span>somehow</span> <span>pull</span> <span>us</span> <span>back</span> <span>together.</span> <span>But</span> <span>I’m</span> <span>starting</span> <span>to</span> <span>wonder</span> <span>if</span> <span>we’re</span> <span>both</span> <span>too</span> <span>different</span> <span>now,</span> <span>too</span> <span>lost</span> <span>in</span> <span>our</span> <span>own</span> <span>worlds</span> <span>to</span> <span>find</span> <span>each</span> <span>other</span> <span>again.</span> <span>I</span> <span>hate</span> <span>the</span> <span>thought</span> <span>of</span> <span>this</span> <span>ending,</span> <span>of</span> <span>us</span> <span>breaking</span> <span>up,</span> <span>but</span> <span>I</span> <span>can’t</span> <span>ignore</span> <span>the</span> <span>reality</span> <span>that</span> <span>it</span> <span>might</span> <span>be</span> <span>what’s</span> <span>best</span> <span>for</span> <span>both</span> <span>of</span> <span>us.</span>
+        </p>
+        <p>
+            <span>Please</span> <span>know</span> <span>that</span> <span>I</span> <span>will</span> <span>always</span> <span>cherish</span> <span>the</span> <span>moments</span> <span>we</span> <span>shared,</span> <span>the</span> <span>laughter</span> <span>and</span> <span>joy,</span> <span>and</span> <span>the</span> <span>way</span> <span>you</span> <span>made</span> <span>me</span> <span>feel</span> <span>alive.</span> <span>But</span> <span>right</span> <span>now,</span> <span>I</span> <span>don’t</span> <span>know</span> <span>if</span> <span>we’re</span> <span>can</span> <span>find</span> <span>our</span> <span>way</span> <span>back</span> <span>to</span> <span>each</span> <span>other.</span> <span>I</span> <span>just</span> <span>don’t</span> <span>know.</span>
+        </p>
+        <div class="footer">
+            <p>2 - 18 - 2024</p>
+            <p>Sammi</p>
+        </div>
+    </div>
+</body>
+</html>
